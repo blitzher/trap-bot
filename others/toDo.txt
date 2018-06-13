@@ -1,0 +1,7 @@
+1. Instantiate classes upon launch/when requested from database
+    (y)
+
+2. 100% clear objects from database and all associated functions
+    (y)
+
+3. Make the query_player method work properly! :<
