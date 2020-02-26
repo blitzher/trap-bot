@@ -21,7 +21,8 @@ class Player:
         self.group = None
         self.playing = False
 
-    def __eq__(self, other): return(self.name == other.name);
+    def __eq__(self, other): 
+        return(self.name == other.name)
 
     def __repr__(self): return "Player:<user_id:{}>".format(self.id)
 
@@ -37,9 +38,9 @@ class Player:
         arg = NUM[arg]
 
         if arg == self.group:
-            self.update(1);
-            return True;
-        else: return False;
+            self.update(1)
+            return True
+        else: return False
 
     def get_image(self):
         global images
@@ -62,7 +63,8 @@ def query_player(name):
     for player in active_players:
         if player['user_id'] == name:
             return(player)
-    else: return False;
+    else: 
+        return False
 
 @bot.event
 async def on_ready():
@@ -139,7 +141,7 @@ async def stats(ctx):
         await ctx.send(str(line))
 
 def main():
-    bot.run(TOKEN);
+    bot.run(TOKEN)
 
 if __name__ == '__main__':
     main()

@@ -5,7 +5,7 @@ Creates a Drive v3 API service and prints the names and ids of the last 10 files
 the user has access to.
 """
 from __future__ import print_function
-from apiclient.discovery import build
+from apiclient.discovery import build # pylint: disable=F0401
 from httplib2 import Http
 from oauth2client import file, client, tools
 
@@ -49,8 +49,10 @@ def load_images():
 
     for item in all_items:
 
-        try: parents = item['parents'];
-        except: continue;
+        try: 
+            parents = item['parents']
+        except: 
+            continue
 
         if d_fold in parents:
             file = service.files().get(fileId=item['id']).execute()
