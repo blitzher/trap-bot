@@ -7,11 +7,12 @@ def user_to_dict(user):
     return {'user_id':user[0], 'score':user[1]}
 
 def create_user_table():
-    try: c.execute(""" CREATE TABLE users (
+    try: 
+        c.execute(""" CREATE TABLE users (
                 user_id text,
                 score integer
-                )""");
-    except Exception as e:
+                )""")
+    except Exception:
         pass
 
 def add_user(user_id):
@@ -26,7 +27,8 @@ def add_user(user_id):
 
 def update_score(user_id, current, change):
     score = query(user_id)['score']
-    if change == 0: return;
+    if change == 0: 
+        return
 
     with conn:
         c.execute("""
@@ -39,7 +41,8 @@ def query(user_id):
     fetch = c.fetchone()
     if fetch:
         return user_to_dict(fetch)
-    else: return False;
+    else: 
+        return False
 
 
 def query_all(user_id):
@@ -53,5 +56,7 @@ def load_all():
         ret_list.append(user_to_dict(user))
     return ret_list
 
-try: create_user_table()
-except: pass;
+try: 
+    create_user_table()
+except: 
+    pass
