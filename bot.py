@@ -1,8 +1,8 @@
 import discord, drive, random, database
 from discord.ext import commands
+from discord_token import TOKEN
 
 PREFIX = '!'
-TOKEN = 'NDU1NTQ1NTAyNjEyNzE3NTg4.Df9jZw.wDK4S-bWQX4uREGh3zx2EJUiO9o'
 bot = commands.Bot(command_prefix=PREFIX, description='A bot that plays the d or no d game.')
 NUM = {'d': 0, 'no_d':1}
 
